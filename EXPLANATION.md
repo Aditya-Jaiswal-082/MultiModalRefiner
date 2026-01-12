@@ -1,4 +1,6 @@
 Multi-Modal Prompt Refinement System – Design & Thought Process
+
+
 1. Problem Understanding
 
 The goal of this assignment is not simply to build an API, but to demonstrate how I approach an open-ended, ambiguous systems design problem.
@@ -13,7 +15,10 @@ Downstream AI systems require structured, consistent prompts
 
 Therefore, the real problem is standardization under uncertainty, not just parsing text.
 
+
 2. My Thought Process & Approach
+
+
 2.1 Key Observations
 
 From the problem statement, I identified four critical challenges:
@@ -29,6 +34,7 @@ Output must follow a predictable schema regardless of input type.
 
 Explainability
 The system must explain what it knows, what it assumes, and what is missing.
+
 
 2.2 Design Philosophy
 
@@ -52,7 +58,9 @@ Easier validation
 
 Better trust in AI pipelines
 
+
 3. Prompt Template / Data Structure Design
+
 3.1 Why This Structure?
 
 The refined prompt output contains the following top-level sections:
@@ -155,6 +163,7 @@ Why important:
 
 Enables iterative refinement instead of silent failure.
 
+
 4. Handling Missing or Ambiguous Information
 
 Instead of rejecting incomplete inputs, the system:
@@ -166,6 +175,7 @@ Adds open questions
 Adds assumptions when reasonable
 
 This mirrors real-world requirement engineering, where clarification is iterative.
+
 
 5. Information Extraction Strategy
 Current (Implemented)
@@ -188,6 +198,7 @@ Cross-modal confidence aggregation
 
 I intentionally started with simple logic to demonstrate architectural clarity before complexity.
 
+
 6. Validation & Error Handling
 
 Validation is achieved through:
@@ -206,10 +217,11 @@ Reduces confidence
 
 Generates clarification prompts
 
+
 7. Alternative Approaches Considered
 Option 1: Fully LLM-based extraction
 
-❌ Rejected initially due to:
+Rejected initially due to:
 
 Non-deterministic outputs
 
@@ -219,7 +231,7 @@ Harder evaluation
 
 Option 2: Fixed rigid schema with mandatory fields
 
-❌ Rejected because:
+Rejected because:
 
 Real-world inputs are incomplete
 
@@ -227,7 +239,8 @@ Leads to frequent failures
 
 Chosen Approach: Hybrid & extensible
 
-✅ Deterministic base + AI augmentation
+Deterministic base + AI augmentation
+
 
 8. My Unique Contribution vs AI Assistance
 AI-Assisted:
@@ -251,6 +264,7 @@ Architectural decisions
 Evaluation-driven prioritization
 
 I critically evaluated AI suggestions and adapted them to fit the problem constraints instead of blindly using them.
+
 
 9. Conclusion
 
