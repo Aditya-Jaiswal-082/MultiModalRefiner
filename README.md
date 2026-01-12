@@ -102,15 +102,13 @@ The refined prompt follows a strict schema, ensuring uniformity across all input
 
 
 
-System Architecture
-
 mml/
 │
 ├── backend/                # FastAPI backend
 │   ├── main.py             # API entry point
-│   ├── refiner.py          # Core refinement logic
-│   ├── schemas.py          # Pydantic models
-│   └── requirements.txt
+│   ├── refiner.py          # Core prompt refinement logic
+│   ├── schemas.py          # Pydantic request/response models
+│   └── requirements.txt   # Backend dependencies
 │
 ├── client/                 # React frontend
 │   ├── src/
@@ -121,7 +119,11 @@ mml/
 │   │   └── App.js
 │   └── package.json
 │
-└── README.md
+├── EXPLANATION.md          # Detailed design & thought-process document (NEW)
+├── SAMPLE_INPUTS_OUTPUTS.md# Sample inputs with refined outputs (NEW)
+│
+└── README.md               # Project overview & setup instructions
+
 
 
 
